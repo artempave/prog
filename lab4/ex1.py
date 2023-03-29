@@ -10,3 +10,4 @@ def sort(arr):
 if __name__ == '__main__':
     arr = input().split()
     sort(list(map(int, arr)))
+
