@@ -9,6 +9,6 @@ def sort(arr):
         arr[j ] = help_
         print(" ".join(map(str, arr)))
 
-
-arr = input().split()
-sort(list(map(int, arr)))
+if __name__ == '__main__':
+    arr = input().split()
+    sort(list(map(int, arr)))
