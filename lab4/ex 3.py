@@ -6,6 +6,7 @@ def sort(arr):
                 arr[j + 1], arr[j] = arr[j], arr[j + 1]
         print(" ".join(map(str, arr)))
 
+
 if __name__ == '__main__':
     arr = input().split()
     sort(list(map(int, arr)))

@@ -8,8 +8,7 @@ def sort(arr):
             for j in range(book[i]):
                 print(i, end=" ")
 
+
 if __name__ == '__main__':
     arr = input().split()
     sort(list(map(int, arr)))
-
-
