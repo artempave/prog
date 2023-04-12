@@ -17,9 +17,9 @@ def partition(A, left, right):
     A[left], A[j] = A[j], A[left]
     return j
 
-l = input().split()
-A = list(map(int, input().split()))
-
-index = partition(A, int(l[0]), int(l[1]))
-print(" ".join(map(str, A)))
-print(index)
+if __name__ == '__main__':
+    l = input().split()
+    A = list(map(int, input().split()))
+    index = partition(A, int(l[0]), int(l[1]))
+    print(" ".join(map(str, A)))
+    print(index)

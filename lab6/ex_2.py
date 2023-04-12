@@ -45,14 +45,13 @@ def mergeSort(A, left=0, right=None, verbose=False):
     merge(A, left, mid, right)
     # печатаем массив и производим слияние с помощью функции merge
 
-
-A = list(map(int, input().split()))
-try:
-    verbose = input()
-    if verbose == 'verbose':
-        verbose = True
-except EOFError:
-    verbose = False
-
-mergeSort(A, 0, len(A) - 1, verbose)
-print(" ".join(map(str, A)))
+if __name__ == '__main__':
+    A = list(map(int, input().split()))
+    try:
+        verbose = input()
+        if verbose == 'verbose':
+            verbose = True
+    except EOFError:
+        verbose = False
+    mergeSort(A, 0, len(A) - 1, verbose)
+    print(" ".join(map(str, A)))

@@ -28,12 +28,12 @@ def merge(A, left, mid, right):
     return indexes
 
 
-
-mas_1 = list(map(int, input().split()))
-mas_2 = list(map(int, input().split()))
-right = len(mas_1) + len(mas_2) - 1
-mid = len(mas_1) - 1
-mas_1.extend(mas_2)
-indexes = merge(mas_1, 0, mid, right)
-print(" ".join(map(str, mas_1)))
-print(" ".join(map(str, indexes)))
+if __name__ == '__main__':
+    mas_1 = list(map(int, input().split()))
+    mas_2 = list(map(int, input().split()))
+    right = len(mas_1) + len(mas_2) - 1
+    mid = len(mas_1) - 1
+    mas_1.extend(mas_2)
+    indexes = merge(mas_1, 0, mid, right)
+    print(" ".join(map(str, mas_1)))
+    print(" ".join(map(str, indexes)))

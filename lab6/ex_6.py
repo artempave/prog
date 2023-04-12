@@ -50,14 +50,13 @@ def quickSort3Way(A, left=0, right=None, verbose=False):
     quickSort3Way(A, left, lt - 1, verbose)
     quickSort3Way(A, gt + 1, right, verbose)
 
-
-A = list(map(int, input().split()))
-try:
-    verbose = input()
-    if verbose == 'verbose':
-        verbose = True
-except EOFError:
-    verbose = False
-
-quickSort3Way(A, 0, None, verbose)
+if __name__ == '__main__':
+    A = list(map(int, input().split()))
+    try:
+        verbose = input()
+        if verbose == 'verbose':
+            verbose = True
+    except EOFError:
+        verbose = False
+    quickSort3Way(A, 0, None, verbose)
 

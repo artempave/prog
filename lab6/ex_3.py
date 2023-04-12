@@ -35,6 +35,6 @@ def mergeSortNonRec(A):
         width *= 2
         print(" ".join(map(str, A)))
 
-
-A = list(map(int, input().split()))
-mergeSortNonRec(A)
+if __name__ == '__main__':
+    A = list(map(int, input().split()))
+    mergeSortNonRec(A)

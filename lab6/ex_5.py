@@ -54,13 +54,12 @@ def quickSortRec(A, left=0, right=None, verbose=False):
     quickSortRec(A, left, p - 1, verbose)
     quickSortRec(A, p + 1, right, verbose)
 
-
-A = list(map(int, input().split()))
-try:
-    verbose = input()
-    if verbose == 'verbose':
-        verbose = True
-except EOFError:
-    verbose = False
-
-quickSortRec(A, 0, None, verbose)
+if __name__ == '__main__':
+    A = list(map(int, input().split()))
+    try:
+        verbose = input()
+        if verbose == 'verbose':
+            verbose = True
+    except EOFError:
+        verbose = False
+    quickSortRec(A, 0, None, verbose)
