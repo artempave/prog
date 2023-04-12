@@ -1,3 +1,6 @@
+from lab6.ex_1 import merge
+
+
 def print_good(A, left, mid, right):
     s = ""
     if left != 0:
@@ -8,23 +11,6 @@ def print_good(A, left, mid, right):
         s += " " + " ".join(map(str, A[right + 1:]))
     print(s)
 
-
-def merge(A, left, mid, right):
-    AUX = []
-    i = left
-    j = mid + 1
-    while (i <= mid and j <= right):
-        if A[i] <= A[j]:
-            AUX.append(A[i])
-            i += 1
-        else:
-            AUX.append(A[j])
-            j += 1
-    if i == mid + 1:
-        AUX.extend(A[j:right + 1])
-    else:
-        AUX.extend(A[i:mid + 1])
-    A[left:right + 1] = AUX.copy()
 
 
 def mergeSort(A, left=0, right=None, verbose=False):

@@ -1,3 +1,6 @@
+from lab6.ex_4 import partition
+
+
 def print_help(A, rang_1, rang_2):
     s1 = ""
     if rang_1[0] > 0:
@@ -17,26 +20,6 @@ def print_help(A, rang_1, rang_2):
     print(s1)
 
 
-def partition(A, left, right):
-    i = left + 1
-    j = right
-    if len(A[left:right + 1]) <= 1:
-        return left
-    while i <= j:
-        while A[i] < A[left] and i < right:
-            i += 1
-        while A[j] > A[left] and j > left:
-            j -= 1
-        if i > j:
-            break
-        A[i], A[j] = A[j], A[i]
-        i += 1
-        if j != right:
-            j -= 1
-    A[left], A[j] = A[j], A[left]
-    return j
-
-
 def quickSortRec(A, left=0, right=None, verbose=False):
     # если параметр right == None, то это первый вызов и надо исправить его на реальное значение
     if right == None:
@@ -53,6 +36,7 @@ def quickSortRec(A, left=0, right=None, verbose=False):
     # рекурсивно сортируем обе части
     quickSortRec(A, left, p - 1, verbose)
     quickSortRec(A, p + 1, right, verbose)
+
 
 if __name__ == '__main__':
     A = list(map(int, input().split()))

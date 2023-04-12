@@ -38,12 +38,14 @@ class MyList:
 
     # метод удаления элемента из начала списка (опять не забываем про пустой список!)
     def popFirst(self):
-        if self.__str__() == "[]":
+        if self.head == self.tail:
             raise Exception("Список пуст")
         item = self.head.next
         self.head.next = item.next
         if item.next != None:
             item.next.prev = self.head
+        else:
+            self.tail = self.head
         return item.data
 
     # метод определения длины списка
@@ -53,7 +55,7 @@ class MyList:
         while item != None:
             len_list += 1
             item = item.next
-        return count
+        return len_list
 
     # метод конструирования строкового представления списка
     def __str__(self):
@@ -71,7 +73,6 @@ class MyList:
 
 # Этот код менять не нужно. При корректной реализации класса MyList он должен выдать корректный результат
 # Раскомментируйте этот код, когда перестанете получать сообщения об ошибках
-"""
 A = MyList()
 A.append(1)
 A.pushFirst(3)
@@ -83,4 +84,3 @@ print(A.popFirst())
 print(A.pop())
 print(A)
 print(len(A))
-"""

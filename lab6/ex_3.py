@@ -1,25 +1,4 @@
-def merge(A, left, mid, right):
-    AUX = []
-    indexes = []
-    i = left
-    j = mid + 1
-    while (i <= mid and j <= right):
-        if A[i] <= A[j]:
-            indexes.append(i)
-            AUX.append(A[i])
-            i += 1
-        else:
-            indexes.append(j)
-            AUX.append(A[j])
-            j += 1
-    if i == mid + 1:
-        AUX.extend(A[j:right + 1])
-        indexes.extend([i for i in range(j, right + 1)])
-    else:
-        AUX.extend(A[i:mid + 1])
-        indexes.extend([i for i in range(i, mid + 1)])
-    A[left:right + 1] = AUX
-    return indexes
+from lab6.ex_1 import merge
 
 
 def mergeSortNonRec(A):
